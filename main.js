@@ -37,7 +37,7 @@
     var buffer = new Ember.RenderBuffer();
 
     instance.render(buffer)
-    return buffer.string();
+    return buffer.innerContent();
   }
 
   function getStyleComponentName(component) {
@@ -68,7 +68,8 @@
   function inject(name, css) {
     var styleTag = getStyleTag();
     var comment = '\n\n/* ic-styled: '+name+' */\n\n';
-    styleTag.appendChild(document.createTextNode(comment+css));
+    styleTag.appendChild(document.createTextNode(comment));
+    styleTag.appendChild(css);
   }
 
 }));
