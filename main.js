@@ -34,7 +34,7 @@
 
   function getCSSFromComponent(component) {
     var instance = component.create();
-    var buffer = new Ember.RenderBuffer();
+    var buffer = new Ember.RenderBuffer('div');
 
     instance.render(buffer)
     return buffer.innerContent();
